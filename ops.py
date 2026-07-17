@@ -9,12 +9,20 @@
 #                                 (claves del roster separadas por comas)
 #   draft_followups args=a,b,c    igual pero publica el borrador en #mentores
 #   post_mentores   args=texto    publica un mensaje en #mentores
+#   find_member     args=q1,q2    busca miembros del servidor por nombre
+#   create_student_channel        args="clave:Nombre[:user_id];clave2:..."
+#                                 crea el canal privado 🔒┃clave (permisos
+#                                 copiados de un canal 1:1 existente) y
+#                                 actualiza roster.json y state.json
 import argparse, time
+from urllib.parse import quote
 
 from bot import (disc, post, jload, jsave, build_message, guild_people, now,
                  GUILD, CH_MENTORES, ROLE_MENTOR)
 
 CUENTAS_CHANNEL_NAME = "cuentas-de-alumnos"
+CATEGORY_MENTORIA = "1527228588687101982"
+TEMPLATE_CHANNEL = "1527343966716952586"   # 🔒┃antonio, referencia de permisos
 
 
 def find_channel(name_contains):
@@ -56,6 +64,73 @@ def create_cuentas_channel(_args):
         print(f"FAIL publicar cuentas {st} {msg}")
 
 
+def find_member(args):
+    for q in [x.strip() for x in args.split(",") if x.strip()]:
+        st, res = disc("GET", f"/guilds/{GUILD}/members/search?query={quote(q)}&limit=10")
+        if st != 200:
+            print(f"FAIL busqueda '{q}': {st} {res}")
+            continue
+        print(f"— resultados para '{q}': {len(res)}")
+        for m in res:
+            u = m.get("user", {})
+            print(f"   id={u.get('id')} username={u.get('username')} "
+                  f"global_name={u.get('global_name')} nick={m.get('nick')}")
+
+
+def create_student_channel(args):
+    st, tpl = disc("GET", f"/channels/{TEMPLATE_CHANNEL}")
+    role_overwrites, member_tpl = [], None
+    if st == 200:
+        for o in tpl.get("permission_overwrites", []):
+            if int(o.get("type", 0)) == 0:
+                role_overwrites.append({"id": o["id"], "type": 0,
+                                        "allow": o.get("allow", "0"),
+                                        "deny": o.get("deny", "0")})
+            elif member_tpl is None:
+                member_tpl = o
+    roster, state = jload("roster.json"), jload("state.json")
+    for spec in [s.strip() for s in args.split(";") if s.strip()]:
+        parts = spec.split(":")
+        if len(parts) < 2:
+            print(f"skip '{spec}': formato clave:Nombre[:user_id]")
+            continue
+        key, nombre = parts[0].strip(), parts[1].strip()
+        uid = parts[2].strip() if len(parts) > 2 and parts[2].strip() else None
+        existing = roster["students"].get(key, {})
+        if existing.get("channel_id"):
+            print(f"skip {key}: ya tiene canal {existing['channel_id']}")
+            continue
+        overwrites = list(role_overwrites)
+        if uid:
+            if member_tpl:
+                overwrites.append({"id": uid, "type": 1,
+                                   "allow": member_tpl.get("allow", "3072"),
+                                   "deny": member_tpl.get("deny", "0")})
+            else:
+                overwrites.append({"id": uid, "type": 1, "allow": "3072", "deny": "0"})
+        name = f"🔒┃{key}"
+        st, c = disc("POST", f"/guilds/{GUILD}/channels", {
+            "name": name, "type": 0, "parent_id": CATEGORY_MENTORIA,
+            "permission_overwrites": overwrites})
+        if st not in (200, 201):
+            print(f"FAIL crear canal {key}: {st} {c}")
+            continue
+        roster["students"][key] = {
+            "nombre": existing.get("nombre", nombre),
+            "channel_id": c["id"], "channel_name": name,
+            "user_id": uid or existing.get("user_id")}
+        s = state["students"].setdefault(key, {})
+        s.setdefault("last_human_ts", now().isoformat())
+        s.setdefault("last_speaker", "mentor")
+        s.setdefault("intro_sent", False)
+        s.setdefault("unanswered", 0)
+        s.setdefault("paused", False)
+        print(f"canal creado para {nombre}: {c['id']} (user_id={uid or '—'})")
+        time.sleep(1)
+    jsave("roster.json", roster)
+    jsave("state.json", state)
+
+
 def _followups(args, live):
     keys = [k.strip() for k in args.split(",") if k.strip()]
     roster, state, fichas = jload("roster.json"), jload("state.json"), jload("fichas.json")
@@ -89,7 +164,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--action", required=True,
                     choices=["create_cuentas_channel", "send_followups",
-                             "draft_followups", "post_mentores"])
+                             "draft_followups", "post_mentores",
+                             "find_member", "create_student_channel"])
     ap.add_argument("--args", default="")
     a = ap.parse_args()
     if a.action == "create_cuentas_channel":
@@ -100,6 +176,10 @@ def main():
         _followups(a.args, live=False)
     elif a.action == "post_mentores":
         post(CH_MENTORES, a.args)
+    elif a.action == "find_member":
+        find_member(a.args)
+    elif a.action == "create_student_channel":
+        create_student_channel(a.args)
     print("done", a.action)
 
 

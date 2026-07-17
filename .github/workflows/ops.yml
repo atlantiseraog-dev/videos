@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       action:
-        description: "create_cuentas_channel | send_followups | draft_followups | post_mentores"
+        description: "create_cuentas_channel | send_followups | draft_followups | post_mentores | find_member | create_student_channel"
         required: true
       args:
         description: "según la acción: claves de alumnos (antonio,maxys) o texto"
@@ -37,7 +37,7 @@ jobs:
         run: |
           git config user.name "asistente-tsf"
           git config user.email "bot@ttshopformula.local"
-          git add state.json
+          git add state.json roster.json
           git diff --cached --quiet || git commit -m "ops state $(date -u +%F_%H%M)"
           git pull --rebase || true
           git push
