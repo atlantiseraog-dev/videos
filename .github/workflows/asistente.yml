@@ -2,8 +2,9 @@ name: Asistente TSF
 
 on:
   schedule:
-    - cron: "*/30 * * * *"   # replycheck (avisos de respuestas + comandos)
-    - cron: "0 7 * * *"      # followups diarios — 09:00 España (verano). En invierno: "0 8 * * *"
+    - cron: "*/30 * * * *"   # replycheck (aviso combinado de respuestas + comandos)
+    - cron: "0 7 * * *"      # followups — cubre las 09:00 España en verano
+    - cron: "0 8 * * *"      # followups — cubre las 09:00 España en invierno
   workflow_dispatch:
     inputs:
       task:
@@ -31,8 +32,13 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "task=${{ inputs.task }}" >> "$GITHUB_OUTPUT"
-          elif [ "${{ github.event.schedule }}" = "0 7 * * *" ]; then
-            echo "task=followups" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.schedule }}" = "0 7 * * *" ] || [ "${{ github.event.schedule }}" = "0 8 * * *" ]; then
+            # followups solo cuando en España son las 09:00 (así el cambio de hora no afecta)
+            if [ "$(TZ=Europe/Madrid date +%H)" = "09" ]; then
+              echo "task=followups" >> "$GITHUB_OUTPUT"
+            else
+              echo "task=replycheck" >> "$GITHUB_OUTPUT"
+            fi
           else
             echo "task=replycheck" >> "$GITHUB_OUTPUT"
           fi
