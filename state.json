@@ -1,5 +1,5 @@
 {
- "cmd_cursor": "1527705450068447394",
+ "cmd_cursor": "1527719756332011540",
  "students": {
   "antonio": {
    "last_human_ts": "2026-07-17T14:49:33.646000+00:00",
@@ -110,12 +110,12 @@
    "cursor": "1527250327152099399"
   },
   "claudiu": {
-   "last_human_ts": "2026-07-17T15:52:50.754000+00:00",
-   "last_speaker": "student",
+   "last_human_ts": "2026-07-17T16:37:41.165000+00:00",
+   "last_speaker": "mentor",
    "intro_sent": false,
    "unanswered": 0,
    "paused": false,
-   "cursor": "1527704645026189364",
+   "cursor": "1527715929427808336",
    "alerted": false
   },
   "angie": {
@@ -182,12 +182,12 @@
    "paused": false
   },
   "ana": {
-   "last_human_ts": "2026-07-17T14:51:08.629000+00:00",
+   "last_human_ts": "2026-07-17T16:35:11.974000+00:00",
    "last_speaker": "mentor",
    "intro_sent": false,
    "unanswered": 0,
    "paused": false,
-   "cursor": "1527689117188620510",
+   "cursor": "1527715303675396277",
    "alerted": false
   },
   "david": {
