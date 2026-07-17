@@ -47,7 +47,7 @@ jobs:
         env:
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          MODE: draft   # cambiar a "live" para enviar a los alumnos de verdad
+          MODE: live   # OK de Alex 2026-07-17 — "draft" para volver al modo borrador
         run: python bot.py --task "${{ steps.t.outputs.task }}"
 
       - name: Guardar estado
