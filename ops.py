@@ -108,7 +108,7 @@ def create_student_channel(args):
                                    "deny": member_tpl.get("deny", "0")})
             else:
                 overwrites.append({"id": uid, "type": 1, "allow": "3072", "deny": "0"})
-        name = f"🔒┃{key}"
+        name = f"🔒┃{nombre.split()[0].lower()}"
         st, c = disc("POST", f"/guilds/{GUILD}/channels", {
             "name": name, "type": 0, "parent_id": CATEGORY_MENTORIA,
             "permission_overwrites": overwrites})
