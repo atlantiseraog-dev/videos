@@ -124,21 +124,28 @@ RULES = (
     "alumno en su canal privado de Discord.\n"
     "REGLAS DURAS:\n"
     "- Español de España, tuteo, tono natural y cercano, cero corporativo.\n"
-    "- 4 a 8 líneas. Punto por punto con guiones. Termina con una pregunta concreta.\n"
-    "- SOLO repasas lo que los mentores ya le dijeron (ficha e historial). "
-    "PROHIBIDO dar consejo técnico nuevo, prometer nada, hablar de dinero, "
-    "precios, pagos o plazos, o mencionar a otros alumnos por nombre.\n"
+    "- Nada de exclamaciones dobles ni saludos tipo '¡Buenas!'. Casi sin "
+    "exclamaciones; puedes alargar el saludo para sonar cercano (ej. 'Holaaa').\n"
+    "- 4 a 8 líneas. Los puntos pendientes con guiones.\n"
+    "- Es una revisión automática periódica: SOLO repasas lo que los mentores ya "
+    "le dijeron (ficha e historial). PROHIBIDO dar consejo técnico nuevo, "
+    "prometer nada, hablar de dinero, precios, pagos o plazos, o mencionar a "
+    "otros alumnos por nombre.\n"
+    "- Cierra preguntando en qué punto está con cada punto, dejando abierta la "
+    "opción de que al final haya decidido hacer otra cosa, y ofreciendo ayuda: "
+    "si necesita cualquier cosa extra que lo cuente y avisarás a Alex, Víctor "
+    "y Ángel.\n"
     "- No inventes datos. Si no hay historial, usa solo la ficha.\n"
-    "- Cierra con la idea de que avisarás a los mentores cuando responda.\n"
     "- Devuelve SOLO el texto del mensaje, sin comillas ni explicaciones."
 )
 
-INTRO = ("Hola {nombre}! Soy el Asistente TSF. Me pasaré por aquí de vez en "
-         "cuando para ver cómo vas entre revisión y revisión.\n\n"
-         "Antes de nada: este mensaje es automático. Pero cuando tú respondas, "
-         "les llega el aviso a Alex, Víctor y Ángel y te contestan ellos "
-         "personalmente. Aquí nunca te va a responder una IA — siempre van a "
-         "ser ellos.\n\n")
+INTRO = ("Holaaa {nombre}, estamos trabajando para que en ningún momento "
+         "estéis sin seguimiento. Por eso hemos creado un sistema de revisión "
+         "automática que te irá escribiendo por aquí de vez en cuando.\n\n"
+         "Eso sí, tu respuesta no la va a contestar el asistente: cuando "
+         "escribas, les llega el aviso a Alex, Víctor y Ángel y te responden "
+         "ellos personalmente. Simplemente así podemos llevar el seguimiento "
+         "de manera más sencilla.\n\n")
 
 def gemini(prompt):
     if not GKEY:
@@ -183,7 +190,7 @@ def render_history(channel_id, entry, mentor_ids, limit=30):
 def validate(text):
     if not text or len(text) > 1400:
         return False
-    banned = ["€", "precio", "pagar", "cuota", "factur", "mentor\u00eda a", "oferta"]
+    banned = ["€", "precio", "pagar", "cuota", "factur", "mentoría a", "oferta"]
     low = norm(text)
     if any(norm(b) in low for b in banned):
         return False
@@ -191,12 +198,14 @@ def validate(text):
 
 def template_message(nombre, ficha):
     pts = ficha.get("pendientes", [])
-    body = f"Hola {nombre}! Repaso rápido de tu canal.\n\n"
-    body += "De la última revisión con los mentores quedaron estos puntos:\n"
+    body = f"Holaaa {nombre}, paso a hacerte la revisión por aquí.\n\n"
+    body += "De la última revisión con los mentores hablamos de:\n"
     for p in pts[:4]:
         body += f"– {p}\n"
-    body += "\n¿En qué punto estás con cada uno? Cuéntame y les aviso a Alex, "
-    body += "Víctor y Ángel para que le echen un ojo a lo nuevo. 💪"
+    body += ("\n¿En qué punto estás con cada uno? Si al final has decidido "
+             "hacer otra cosa o necesitas cualquier cosa extra, cuéntamelo "
+             "también. En cuanto respondas les aviso a Alex, Víctor y Ángel "
+             "para que le echen un ojo a lo nuevo. Y dime si tienes alguna duda.")
     return body
 
 def build_message(key, entry, ficha, state_s, mentor_ids):
@@ -221,6 +230,7 @@ def build_message(key, entry, ficha, state_s, mentor_ids):
 
 def task_replycheck(roster, state, fichas):
     mentor_ids, member_ids = guild_people()
+    pendientes = []
     for key, entry in roster["students"].items():
         ch = entry.get("channel_id")
         if not ch:
@@ -250,8 +260,14 @@ def task_replycheck(roster, state, fichas):
                 student_wrote = True
                 last_human = "student"
         if student_wrote and last_human == "student":
-            post(CH_MENTORES,
-                 f"🔔 <@&{ROLE_MENTOR}> — {entry['nombre']} ha escrito en su canal (<#{ch}>)")
+            pendientes.append((entry["nombre"], ch))
+    # Un solo aviso combinado por pasada; si nadie ha escrito, no se envía nada.
+    if len(pendientes) == 1:
+        n, ch = pendientes[0]
+        post(CH_MENTORES, f"🔔 <@&{ROLE_MENTOR}> — {n} ha escrito en su canal (<#{ch}>)")
+    elif pendientes:
+        lineas = "\n".join(f"• {n} (<#{c}>)" for n, c in pendientes)
+        post(CH_MENTORES, f"🔔 <@&{ROLE_MENTOR}> — han escrito en su canal:\n{lineas}")
     handle_commands(roster, state)
 
 def handle_commands(roster, state):
