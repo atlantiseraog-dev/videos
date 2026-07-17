@@ -1,0 +1,54 @@
+name: Asistente TSF
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # replycheck (avisos de respuestas + comandos)
+    - cron: "0 7 * * *"      # followups diarios — 09:00 España (verano). En invierno: "0 8 * * *"
+  workflow_dispatch:
+    inputs:
+      task:
+        description: "followups | replycheck"
+        default: "replycheck"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: asistente-tsf
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Decidir tarea
+        id: t
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "task=${{ inputs.task }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.schedule }}" = "0 7 * * *" ]; then
+            echo "task=followups" >> "$GITHUB_OUTPUT"
+          else
+            echo "task=replycheck" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Ejecutar bot
+        env:
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          MODE: draft   # cambiar a "live" para enviar a los alumnos de verdad
+        run: python bot.py --task "${{ steps.t.outputs.task }}"
+
+      - name: Guardar estado
+        run: |
+          git config user.name "asistente-tsf"
+          git config user.email "bot@ttshopformula.local"
+          git add state.json
+          git diff --cached --quiet || git commit -m "state $(date -u +%F_%H%M)"
+          git pull --rebase || true
+          git push

@@ -1,0 +1,31 @@
+{
+ "cmd_cursor": null,
+ "students": {
+  "antonio":    {"last_human_ts": "2026-06-27T12:00:00+00:00", "last_speaker": "mentor", "last_draft": "2026-07-17T03:30:00+00:00", "intro_sent": false, "unanswered": 0, "paused": false},
+  "yolanda":    {"last_human_ts": "2026-07-16T21:26:00+00:00", "last_speaker": "student", "intro_sent": false, "unanswered": 0, "paused": false},
+  "maritza":    {"last_human_ts": "2026-07-17T03:04:00+00:00", "last_speaker": "mentor", "intro_sent": false, "unanswered": 0, "paused": false},
+  "yeray":      {"last_human_ts": "2026-07-02T12:00:00+00:00", "last_speaker": "mentor", "intro_sent": false, "unanswered": 0, "paused": false},
+  "maxys":      {"last_human_ts": "2026-07-02T12:00:00+00:00", "last_speaker": "mentor", "last_draft": "2026-07-17T03:30:00+00:00", "intro_sent": false, "unanswered": 0, "paused": false},
+  "adri":       {"last_human_ts": "2026-07-02T12:00:00+00:00", "last_speaker": "mentor", "last_draft": "2026-07-17T03:30:00+00:00", "intro_sent": false, "unanswered": 0, "paused": false},
+  "urko":       {"last_human_ts": "2026-07-16T17:23:00+00:00", "last_speaker": "student", "intro_sent": false, "unanswered": 0, "paused": true, "pause_reason": "post-operación"},
+  "virginia":   {"last_human_ts": "2026-07-16T15:57:00+00:00", "last_speaker": "student", "intro_sent": false, "unanswered": 0, "paused": true, "pause_reason": "vacaciones"},
+  "celia":      {"last_human_ts": "2026-07-14T12:00:00+00:00", "last_speaker": "mentor", "intro_sent": false, "unanswered": 0, "paused": true, "pause_reason": "enferma"},
+  "laura":      {"last_human_ts": "2026-07-16T10:04:00+00:00", "last_speaker": "student", "intro_sent": false, "unanswered": 0, "paused": false},
+  "dayana":     {"last_human_ts": "2026-07-14T12:00:00+00:00", "last_speaker": "mentor", "intro_sent": false, "unanswered": 0, "paused": true, "pause_reason": "problemas personales"},
+  "ines":       {"last_human_ts": "2026-07-16T09:47:00+00:00", "last_speaker": "student", "intro_sent": false, "unanswered": 0, "paused": false},
+  "claudiu":    {"last_human_ts": "2026-07-13T12:00:00+00:00", "last_speaker": "mentor", "intro_sent": false, "unanswered": 0, "paused": false},
+  "angie":      {"last_human_ts": "2026-07-16T12:00:00+00:00", "last_speaker": "mentor", "intro_sent": false, "unanswered": 0, "paused": false},
+  "kalmetatok": {"last_human_ts": "2026-07-16T12:00:00+00:00", "last_speaker": "mentor", "intro_sent": false, "unanswered": 0, "paused": true, "pause_reason": "identidad por confirmar"},
+  "mayiz":      {"last_human_ts": "2026-07-16T18:40:00+00:00", "last_speaker": "student", "intro_sent": false, "unanswered": 0, "paused": true, "pause_reason": "identidad por confirmar"},
+  "xenia":      {"last_human_ts": "2026-07-15T12:00:00+00:00", "last_speaker": "mentor", "intro_sent": false, "unanswered": 0, "paused": false},
+  "reyes":      {"last_human_ts": "2026-07-14T12:00:00+00:00", "last_speaker": "mentor", "intro_sent": false, "unanswered": 0, "paused": false},
+  "javier":     {"last_human_ts": "2026-07-13T12:00:00+00:00", "last_speaker": "mentor", "intro_sent": false, "unanswered": 0, "paused": true, "pause_reason": "vacaciones"},
+  "marta_a":    {"last_human_ts": "2026-07-14T12:00:00+00:00", "last_speaker": "mentor", "intro_sent": false, "unanswered": 0, "paused": false},
+  "amparo":     {"last_human_ts": "2026-07-13T12:00:00+00:00", "last_speaker": "mentor", "intro_sent": false, "unanswered": 0, "paused": false},
+  "ana":        {"last_human_ts": "2026-07-14T12:00:00+00:00", "last_speaker": "mentor", "intro_sent": false, "unanswered": 0, "paused": false},
+  "david":      {"last_human_ts": "2026-07-02T12:00:00+00:00", "last_speaker": "mentor", "intro_sent": false, "unanswered": 0, "paused": false},
+  "marta_f":    {"last_human_ts": "2026-07-14T12:00:00+00:00", "last_speaker": "mentor", "intro_sent": false, "unanswered": 0, "paused": false},
+  "angel_t":    {"last_human_ts": "2026-07-14T12:00:00+00:00", "last_speaker": "mentor", "intro_sent": false, "unanswered": 0, "paused": true, "pause_reason": "ausente por trabajo"},
+  "javi_f":     {"last_human_ts": "2026-06-26T12:00:00+00:00", "last_speaker": "mentor", "intro_sent": false, "unanswered": 0, "paused": true, "pause_reason": "toque personal de Alex primero"}
+ }
+}

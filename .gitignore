@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Secrets — NEVER commit these. Use GitHub Actions secrets instead.
+.env
+.env.*
+*.token
+secrets.json
+credentials.json
