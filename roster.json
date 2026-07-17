@@ -1,30 +1,160 @@
 {
  "students": {
-  "antonio":    {"nombre": "Antonio",   "channel_id": "1527343966716952586", "channel_name": "🔒┃antonio",  "user_id": "568606864682647563"},
-  "yolanda":    {"nombre": "Yolanda",   "channel_id": "1527250202757562438", "channel_name": "🔒┃yolanda",  "user_id": "1521956448215634072"},
-  "maritza":    {"nombre": "Maritza",   "channel_id": "1527250191604908034", "channel_name": "🔒┃maritza",  "user_id": "1496253312541130873"},
-  "yeray":      {"nombre": "Yeray",     "channel_id": "1527343975302824046", "channel_name": "🔒┃yeray",    "user_id": null},
-  "maxys":      {"nombre": "Maxys",     "channel_id": "1527250173993160765", "channel_name": "🔒┃maxys",    "user_id": "1412024450920091702"},
-  "adri":       {"nombre": "Adri",      "channel_id": "1527343982819016825", "channel_name": "🔒┃adri",     "user_id": "1289505176134352939"},
-  "urko":       {"nombre": "Urko",      "channel_id": "1527343994076397860", "channel_name": "🔒┃urko",     "user_id": "1431384905983725701"},
-  "virginia":   {"nombre": "Virginia",  "channel_id": "1527250179277979691", "channel_name": "🔒┃virginia", "user_id": "1441369886113665025"},
-  "celia":      {"nombre": "Celia",     "channel_id": "1527250157500891146", "channel_name": "🔒┃celia",    "user_id": "1066993742449483847"},
-  "laura":      {"nombre": "Laura",     "channel_id": "1527250162702090280", "channel_name": "🔒┃laura",    "user_id": "1167867779458801725"},
-  "dayana":     {"nombre": "Diana",     "channel_id": "1527250185502326854", "channel_name": "🔒┃dayana",   "user_id": "1472894434109554718"},
-  "ines":       {"nombre": "Inés",      "channel_id": "1527250197137326151", "channel_name": "🔒┃inés",     "user_id": "1499726610763616347"},
-  "claudiu":    {"nombre": "Claudiu",   "channel_id": "1527343988342784040", "channel_name": "🔒┃claudiu",  "user_id": "1302638085334372353"},
-  "angie":      {"nombre": "Angie",     "channel_id": "1527344000107810917", "channel_name": "🔒┃angie",    "user_id": "1441103659860758548"},
-  "kalmetatok": {"nombre": "Kalmetatok","channel_id": "1527344010455420990", "channel_name": "🔒┃kalmetatok","user_id": "1442075700533395490"},
-  "mayiz":      {"nombre": "Mayiz",     "channel_id": "1527344019078774975", "channel_name": "🔒┃mayiz",    "user_id": "1500102519240523796"},
-  "xenia":      {"nombre": "Xenia",     "channel_id": "1527516621240008816", "channel_name": "🔒┃xenia",    "user_id": "1527459629313818664"},
-  "reyes":      {"nombre": "Reyes",     "channel_id": null, "channel_name": null, "user_id": null},
-  "javier":     {"nombre": "Javier",    "channel_id": null, "channel_name": null, "user_id": null},
-  "marta_a":    {"nombre": "Marta A.",  "channel_id": null, "channel_name": null, "user_id": null},
-  "amparo":     {"nombre": "Amparo",    "channel_id": null, "channel_name": null, "user_id": null},
-  "ana":        {"nombre": "Ana",       "channel_id": null, "channel_name": null, "user_id": null},
-  "david":      {"nombre": "David",     "channel_id": null, "channel_name": null, "user_id": null},
-  "marta_f":    {"nombre": "Marta F.",  "channel_id": null, "channel_name": null, "user_id": null},
-  "angel_t":    {"nombre": "Angel T.",  "channel_id": null, "channel_name": null, "user_id": null},
-  "javi_f":     {"nombre": "Javi F.",   "channel_id": null, "channel_name": null, "user_id": null}
+  "antonio": {
+   "nombre": "Antonio",
+   "channel_id": "1527343966716952586",
+   "channel_name": "🔒┃antonio",
+   "user_id": "568606864682647563"
+  },
+  "yolanda": {
+   "nombre": "Yolanda",
+   "channel_id": "1527250202757562438",
+   "channel_name": "🔒┃yolanda",
+   "user_id": "1521956448215634072"
+  },
+  "maritza": {
+   "nombre": "Maritza",
+   "channel_id": "1527250191604908034",
+   "channel_name": "🔒┃maritza",
+   "user_id": "1496253312541130873"
+  },
+  "yeray": {
+   "nombre": "Yeray",
+   "channel_id": "1527343975302824046",
+   "channel_name": "🔒┃yeray",
+   "user_id": null
+  },
+  "maxys": {
+   "nombre": "Maxys",
+   "channel_id": "1527250173993160765",
+   "channel_name": "🔒┃maxys",
+   "user_id": "1412024450920091702"
+  },
+  "adri": {
+   "nombre": "Adri",
+   "channel_id": "1527343982819016825",
+   "channel_name": "🔒┃adri",
+   "user_id": "1289505176134352939"
+  },
+  "urko": {
+   "nombre": "Urko",
+   "channel_id": "1527343994076397860",
+   "channel_name": "🔒┃urko",
+   "user_id": "1431384905983725701"
+  },
+  "virginia": {
+   "nombre": "Virginia",
+   "channel_id": "1527250179277979691",
+   "channel_name": "🔒┃virginia",
+   "user_id": "1441369886113665025"
+  },
+  "celia": {
+   "nombre": "Celia",
+   "channel_id": "1527250157500891146",
+   "channel_name": "🔒┃celia",
+   "user_id": "1066993742449483847"
+  },
+  "laura": {
+   "nombre": "Laura",
+   "channel_id": "1527250162702090280",
+   "channel_name": "🔒┃laura",
+   "user_id": "1167867779458801725"
+  },
+  "dayana": {
+   "nombre": "Diana",
+   "channel_id": "1527250185502326854",
+   "channel_name": "🔒┃dayana",
+   "user_id": "1472894434109554718"
+  },
+  "ines": {
+   "nombre": "Inés",
+   "channel_id": "1527250197137326151",
+   "channel_name": "🔒┃inés",
+   "user_id": "1499726610763616347"
+  },
+  "claudiu": {
+   "nombre": "Claudiu",
+   "channel_id": "1527343988342784040",
+   "channel_name": "🔒┃claudiu",
+   "user_id": "1302638085334372353"
+  },
+  "angie": {
+   "nombre": "Angie",
+   "channel_id": "1527344000107810917",
+   "channel_name": "🔒┃angie",
+   "user_id": "1441103659860758548"
+  },
+  "kalmetatok": {
+   "nombre": "Kalmetatok",
+   "channel_id": "1527344010455420990",
+   "channel_name": "🔒┃kalmetatok",
+   "user_id": "1442075700533395490"
+  },
+  "mayiz": {
+   "nombre": "Mayiz",
+   "channel_id": "1527344019078774975",
+   "channel_name": "🔒┃mayiz",
+   "user_id": "1500102519240523796"
+  },
+  "xenia": {
+   "nombre": "Xenia",
+   "channel_id": "1527516621240008816",
+   "channel_name": "🔒┃xenia",
+   "user_id": "1527459629313818664"
+  },
+  "reyes": {
+   "nombre": "Reyes",
+   "channel_id": null,
+   "channel_name": null,
+   "user_id": null
+  },
+  "javier": {
+   "nombre": "Javier",
+   "channel_id": null,
+   "channel_name": null,
+   "user_id": null
+  },
+  "marta_a": {
+   "nombre": "Marta A.",
+   "channel_id": null,
+   "channel_name": null,
+   "user_id": null
+  },
+  "amparo": {
+   "nombre": "Amparo",
+   "channel_id": null,
+   "channel_name": null,
+   "user_id": null
+  },
+  "ana": {
+   "nombre": "Ana",
+   "channel_id": "1527650055228751924",
+   "channel_name": "🔒┃ana",
+   "user_id": "1527592967362187274"
+  },
+  "david": {
+   "nombre": "David",
+   "channel_id": null,
+   "channel_name": null,
+   "user_id": null
+  },
+  "marta_f": {
+   "nombre": "Marta F.",
+   "channel_id": "1527650050119958620",
+   "channel_name": "🔒┃marta",
+   "user_id": "1527579558079893675"
+  },
+  "angel_t": {
+   "nombre": "Angel T.",
+   "channel_id": null,
+   "channel_name": null,
+   "user_id": null
+  },
+  "javi_f": {
+   "nombre": "Javi F.",
+   "channel_id": null,
+   "channel_name": null,
+   "user_id": null
+  }
  }
 }
