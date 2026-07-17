@@ -11,7 +11,7 @@
 #   post_mentores   args=texto    publica un mensaje en #mentores
 #   find_member     args=q1,q2    busca miembros del servidor por nombre
 #   create_student_channel        args="clave:Nombre[:user_id];clave2:..."
-#                                 crea el canal privado 🔒┃clave (permisos
+#                                 crea el canal privado 🔒┃nombre (permisos
 #                                 copiados de un canal 1:1 existente) y
 #                                 actualiza roster.json y state.json
 import argparse, time
@@ -108,7 +108,7 @@ def create_student_channel(args):
                                    "deny": member_tpl.get("deny", "0")})
             else:
                 overwrites.append({"id": uid, "type": 1, "allow": "3072", "deny": "0"})
-        name = f"🔒┃{key}"
+        name = f"🔒┃{nombre.split()[0].lower()}"
         st, c = disc("POST", f"/guilds/{GUILD}/channels", {
             "name": name, "type": 0, "parent_id": CATEGORY_MENTORIA,
             "permission_overwrites": overwrites})
