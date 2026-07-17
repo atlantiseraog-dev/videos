@@ -1,5 +1,5 @@
 {
- "cmd_cursor": "1527635586859667596",
+ "cmd_cursor": "1527656209610576143",
  "students": {
   "antonio": {
    "last_human_ts": "2026-07-17T12:19:56.763935+00:00",
@@ -8,16 +8,16 @@
    "intro_sent": true,
    "unanswered": 1,
    "paused": false,
-   "cursor": "1527343969162232012",
+   "cursor": "1527651067620495420",
    "last_sent": "2026-07-17T12:19:56.763935+00:00"
   },
   "yolanda": {
-   "last_human_ts": "2026-07-17T10:25:49.628000+00:00",
-   "last_speaker": "student",
+   "last_human_ts": "2026-07-17T11:19:54.820000+00:00",
+   "last_speaker": "mentor",
    "intro_sent": false,
    "unanswered": 0,
    "paused": false,
-   "cursor": "1527622348058923028",
+   "cursor": "1527635959380836452",
    "alerted": false
   },
   "maritza": {
@@ -43,7 +43,7 @@
    "intro_sent": true,
    "unanswered": 1,
    "paused": false,
-   "cursor": "1527250175163367475",
+   "cursor": "1527651076919136386",
    "last_sent": "2026-07-17T12:19:58.980072+00:00"
   },
   "adri": {
@@ -53,7 +53,7 @@
    "intro_sent": true,
    "unanswered": 1,
    "paused": false,
-   "cursor": "1527343984161067148",
+   "cursor": "1527651086188679330",
    "last_sent": "2026-07-17T12:20:01.179728+00:00"
   },
   "urko": {
@@ -109,12 +109,12 @@
    "cursor": "1527250327152099399"
   },
   "claudiu": {
-   "last_human_ts": "2026-07-17T09:53:57.811000+00:00",
+   "last_human_ts": "2026-07-17T11:42:32.150000+00:00",
    "last_speaker": "mentor",
    "intro_sent": false,
    "unanswered": 0,
    "paused": false,
-   "cursor": "1527614329317363763"
+   "cursor": "1527641652435615764"
   },
   "angie": {
    "last_human_ts": "2026-07-16T12:00:00+00:00",
@@ -184,7 +184,8 @@
    "last_speaker": "mentor",
    "intro_sent": false,
    "unanswered": 0,
-   "paused": false
+   "paused": false,
+   "cursor": "1527656410517733538"
   },
   "david": {
    "last_human_ts": "2026-07-02T12:00:00+00:00",
@@ -198,7 +199,8 @@
    "last_speaker": "mentor",
    "intro_sent": false,
    "unanswered": 0,
-   "paused": false
+   "paused": false,
+   "cursor": "0"
   },
   "angel_t": {
    "last_human_ts": "2026-07-14T12:00:00+00:00",
@@ -206,7 +208,8 @@
    "intro_sent": false,
    "unanswered": 0,
    "paused": true,
-   "pause_reason": "ausente por trabajo"
+   "pause_reason": "ausente por trabajo",
+   "cursor": "0"
   },
   "javi_f": {
    "last_human_ts": "2026-06-26T12:00:00+00:00",
