@@ -1,14 +1,14 @@
 {
- "cmd_cursor": "1528147462307450943",
+ "cmd_cursor": "1528180605060120735",
  "students": {
   "antonio": {
-   "last_human_ts": "2026-07-17T14:49:33.646000+00:00",
+   "last_human_ts": "2026-07-18T22:37:40.917000+00:00",
    "last_speaker": "student",
    "last_draft": "2026-07-17T03:30:00+00:00",
    "intro_sent": true,
    "unanswered": 0,
    "paused": false,
-   "cursor": "1527688718800912636",
+   "cursor": "1528168913219751966",
    "last_sent": "2026-07-17T12:19:56.763935+00:00",
    "alerted": false
   },
@@ -129,13 +129,13 @@
    "alerted": false
   },
   "kalmetatok": {
-   "last_human_ts": "2026-07-18T20:18:47.404000+00:00",
-   "last_speaker": "student",
+   "last_human_ts": "2026-07-18T22:27:24.262000+00:00",
+   "last_speaker": "mentor",
    "intro_sent": false,
    "unanswered": 0,
    "paused": true,
    "pause_reason": "identidad por confirmar",
-   "cursor": "1528133959932973159",
+   "cursor": "1528166326781349999",
    "alerted": false
   },
   "mayiz": {
