@@ -18,6 +18,7 @@
 #   assign_vip      args=a,b|""   da el rol VIP (vacío = a todos los que falte)
 #   toggle_pause    args=clave:on|off[:razón]
 #   test_gemini                   llamada de prueba a la API de Gemini
+#   list_mentors                  lista quién tiene el rol @Mentor
 import argparse, time
 from urllib.parse import quote
 
@@ -197,6 +198,21 @@ def toggle_pause(args):
     print(f"{key}: paused={s['paused']}")
 
 
+def list_mentors(_args):
+    """Lista quién tiene el rol @Mentor (deberían ser SOLO Alex, Víctor y Ángel)."""
+    st, members = disc("GET", f"/guilds/{GUILD}/members?limit=1000")
+    if st != 200:
+        print(f"FAIL listar miembros {st} {members}")
+        return
+    n = 0
+    for m in members:
+        if ROLE_MENTOR in m.get("roles", []):
+            u = m.get("user", {})
+            n += 1
+            print(f"MENTOR: {u.get('username')} (nombre visible: {u.get('global_name')}) id={u.get('id')}")
+    print(f"total con rol Mentor: {n}")
+
+
 def test_gemini(_args):
     from bot import gemini
     r = gemini("Responde únicamente con la palabra: hola")
@@ -242,7 +258,7 @@ def main():
                              "draft_followups", "post_mentores",
                              "find_member", "create_student_channel",
                              "audit_members", "assign_vip", "toggle_pause",
-                             "test_gemini"])
+                             "test_gemini", "list_mentors"])
     ap.add_argument("--args", default="")
     a = ap.parse_args()
     if a.action == "create_cuentas_channel":
@@ -265,6 +281,8 @@ def main():
         toggle_pause(a.args)
     elif a.action == "test_gemini":
         test_gemini(a.args)
+    elif a.action == "list_mentors":
+        list_mentors(a.args)
     print("done", a.action)
 
 
