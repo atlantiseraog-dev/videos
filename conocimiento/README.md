@@ -4,7 +4,7 @@ Volcado hecho el 2026-07-18 desde el Google Drive de Alex por Claude (sesión de
 
 ## Qué hay aquí
 - `alumnos/Angie/` — ficha de mentoría y notas de la llamada de estrategia del 18/07 (versión pública, sin datos de pago ni apellidos).
-- `plannings/` — plannings de contenido: Angie (ciclo vigente 19-28 jul, md + xlsx multi-pestaña), Yolanda (doc editable del ciclo 25 jun-8 jul), resumen del de Marta (4-17 jul).
+- `plannings/` — plannings de contenido: Angie (ciclo vigente 19-28 jul, en md; la hoja operativa con checks es la Google Sheet "Planning_Angie_TikTokShop_19JUL-28JUL2026" del Drive), Yolanda (doc editable del ciclo 25 jun-8 jul), resumen del de Marta (4-17 jul).
 - `marketing/` — material de marketing/captación del proyecto: guion VSL julio v2, copys de stories/carruseles, 30 ads por dolores del ICP, campaña hype 15 días, índice de entrevistas, brief de edición.
 
 ## Qué NO está aquí y por qué (repo público)
