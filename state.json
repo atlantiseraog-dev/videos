@@ -80,8 +80,7 @@
    "last_speaker": "mentor",
    "intro_sent": true,
    "unanswered": 1,
-   "paused": true,
-   "pause_reason": "enferma",
+   "paused": false,
    "cursor": "1527250158595735582",
    "last_sent": "2026-07-18T01:48:14.773560+00:00"
   },
