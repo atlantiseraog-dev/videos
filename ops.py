@@ -23,6 +23,7 @@ from bot import (disc, post, jload, jsave, build_message, guild_people, now,
 CUENTAS_CHANNEL_NAME = "cuentas-de-alumnos"
 CATEGORY_MENTORIA = "1527228588687101982"
 TEMPLATE_CHANNEL = "1527343966716952586"   # 🔒┃antonio, referencia de permisos
+ROLE_VIP = "1527228556260937849"           # rol Alumno VIP (acceso a canales generales)
 
 
 def find_channel(name_contains):
@@ -131,6 +132,76 @@ def create_student_channel(args):
     jsave("state.json", state)
 
 
+def audit_members(_args):
+    """Comprueba, por alumno del roster: que está en el servidor y que tiene
+    el rol Alumno VIP (sin él no ve anuncios/chat-general/etc.)."""
+    roster = jload("roster.json")
+    st, members = disc("GET", f"/guilds/{GUILD}/members?limit=1000")
+    if st != 200:
+        print(f"FAIL listar miembros {st} {members}")
+        return
+    by_id = {m["user"]["id"]: m for m in members if m.get("user")}
+    for key, e in sorted(roster["students"].items()):
+        uid = e.get("user_id")
+        if not uid:
+            print(f"{key}: SIN user_id vinculado (no se puede comprobar)")
+            continue
+        m = by_id.get(uid)
+        if not m:
+            print(f"{key}: NO está en el servidor (user_id {uid})")
+            continue
+        roles = m.get("roles", [])
+        vip = "VIP:si" if ROLE_VIP in roles else "VIP:NO"
+        canal = e.get("channel_id") or "SIN-CANAL"
+        print(f"{key}: {m['user'].get('username')} {vip} canal={canal} roles={roles}")
+
+
+def assign_vip(args):
+    """Da el rol Alumno VIP a los alumnos indicados (o a TODOS los del roster
+    que estén en el servidor y no lo tengan, si args va vacío)."""
+    roster = jload("roster.json")
+    keys = [k.strip() for k in args.split(",") if k.strip()] or list(roster["students"].keys())
+    st, members = disc("GET", f"/guilds/{GUILD}/members?limit=1000")
+    by_id = {m["user"]["id"]: m for m in members if m.get("user")} if st == 200 else {}
+    for key in keys:
+        e = roster["students"].get(key)
+        uid = e.get("user_id") if e else None
+        if not uid or uid not in by_id:
+            continue
+        if ROLE_VIP in by_id[uid].get("roles", []):
+            print(f"{key}: ya tenía VIP")
+            continue
+        st2, r = disc("PUT", f"/guilds/{GUILD}/members/{uid}/roles/{ROLE_VIP}")
+        ok = st2 in (200, 204)
+        print(f"{key}: rol VIP {'ASIGNADO' if ok else f'FAIL {st2} {r}'}")
+        time.sleep(0.5)
+
+
+def toggle_pause(args):
+    """args = "clave:on[:razón]" o "clave:off"."""
+    parts = args.split(":")
+    key = parts[0].strip()
+    mode = (parts[1] if len(parts) > 1 else "off").strip()
+    state = jload("state.json")
+    s = state["students"].setdefault(key, {})
+    s["paused"] = (mode == "on")
+    if mode == "on":
+        s["pause_reason"] = parts[2].strip() if len(parts) > 2 else "manual"
+    else:
+        s.pop("pause_reason", None)
+    jsave("state.json", state)
+    print(f"{key}: paused={s['paused']}")
+
+
+def test_gemini(_args):
+    from bot import gemini
+    r = gemini("Responde únicamente con la palabra: hola")
+    if r:
+        print(f"GEMINI OK: {r[:200]}")
+    else:
+        print("GEMINI NO DISPONIBLE (el error GEMINI_FAIL sale justo encima)")
+
+
 def _followups(args, live):
     keys = [k.strip() for k in args.split(",") if k.strip()]
     roster, state, fichas = jload("roster.json"), jload("state.json"), jload("fichas.json")
@@ -165,7 +236,9 @@ def main():
     ap.add_argument("--action", required=True,
                     choices=["create_cuentas_channel", "send_followups",
                              "draft_followups", "post_mentores",
-                             "find_member", "create_student_channel"])
+                             "find_member", "create_student_channel",
+                             "audit_members", "assign_vip", "toggle_pause",
+                             "test_gemini"])
     ap.add_argument("--args", default="")
     a = ap.parse_args()
     if a.action == "create_cuentas_channel":
@@ -180,6 +253,14 @@ def main():
         find_member(a.args)
     elif a.action == "create_student_channel":
         create_student_channel(a.args)
+    elif a.action == "audit_members":
+        audit_members(a.args)
+    elif a.action == "assign_vip":
+        assign_vip(a.args)
+    elif a.action == "toggle_pause":
+        toggle_pause(a.args)
+    elif a.action == "test_gemini":
+        test_gemini(a.args)
     print("done", a.action)
 
 
