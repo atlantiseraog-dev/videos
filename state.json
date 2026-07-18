@@ -227,7 +227,8 @@
    "last_speaker": "mentor",
    "intro_sent": false,
    "unanswered": 0,
-   "paused": false
+   "paused": true,
+   "pause_reason": "alta nueva, ficha pendiente"
   }
  }
 }
