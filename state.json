@@ -76,13 +76,14 @@
    "cursor": "1527343380231749773"
   },
   "celia": {
-   "last_human_ts": "2026-07-14T12:00:00+00:00",
+   "last_human_ts": "2026-07-18T01:48:14.773560+00:00",
    "last_speaker": "mentor",
-   "intro_sent": false,
-   "unanswered": 0,
+   "intro_sent": true,
+   "unanswered": 1,
    "paused": true,
    "pause_reason": "enferma",
-   "cursor": "1527250158595735582"
+   "cursor": "1527250158595735582",
+   "last_sent": "2026-07-18T01:48:14.773560+00:00"
   },
   "laura": {
    "last_human_ts": "2026-07-16T10:04:00+00:00",
