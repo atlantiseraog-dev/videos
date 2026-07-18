@@ -43,6 +43,13 @@ no mencionar a otros alumnos.
 - roster.json (alumnos/canales), fichas.json (situación y pendientes),
   state.json (cursores y tiempos; lo escribe el propio bot), cuentas.md
   (lista de cuentas TikTok para el canal fijo).
+- conocimiento/ — memoria del proyecto volcada desde el Drive de Alex
+  (2026-07-18): fichas ampliadas por alumno (alumnos/), llamadas de venta y
+  playbooks (ventas/llamadas/), plannings (plannings/) y material de
+  marketing (marketing/). Teléfonos redactados; fiscal/CRM/listas de
+  contactos EXCLUIDOS porque este repo es público. Ver conocimiento/README.md.
+- Plan vigente de Angie (10 días, 19-28 jul): conocimiento/plannings/
+  Planning_Angie_TikTokShop_19JUL-28JUL2026.md (+ Sheet y Doc en Drive).
 - IDs del servidor dentro de bot.py. Secrets del repo: DISCORD_TOKEN,
   GEMINI_API_KEY (Actions). NUNCA escribir tokens en el repo: es público.
 
