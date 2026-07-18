@@ -155,6 +155,12 @@
    "channel_id": null,
    "channel_name": null,
    "user_id": null
+  },
+  "melissa": {
+   "nombre": "Melissa",
+   "channel_id": "1527865777347231864",
+   "channel_name": "🔒┃melissa",
+   "user_id": "1527760334906065087"
   }
  }
 }

@@ -221,6 +221,13 @@
    "unanswered": 0,
    "paused": true,
    "pause_reason": "toque personal de Alex primero"
+  },
+  "melissa": {
+   "last_human_ts": "2026-07-18T02:33:07.928032+00:00",
+   "last_speaker": "mentor",
+   "intro_sent": false,
+   "unanswered": 0,
+   "paused": false
   }
  }
 }
