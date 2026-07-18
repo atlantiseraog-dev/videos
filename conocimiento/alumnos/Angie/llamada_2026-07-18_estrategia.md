@@ -1,6 +1,6 @@
 # LLAMADA DE ESTRATEGIA — ANGIE — 18/07/2026 (~1h05)
 > Fathom: https://fathom.video/calls/752026037 (recording_id 165013614)
-> Participantes: Alex (AtlantisOG) y Angie Paola Moreno Ladino
+> Participantes: Alex (AtlantisOG) y Angie
 > Contexto: primera revisión tras entrar el 16/07. Alex viaja a China el 19/07; este análisis es "inicial", la revisión seria llega al acabar el plan de 10 días.
 
 ## Qué se le pasó por Discord antes/durante la llamada
@@ -43,7 +43,7 @@ Angie:
 1. Verse todo lo que le pasó Alex por Discord.
 2. Mirar el planning cuando Alex se lo pase.
 3. Ver clase de carruseles (→ @Víctor) y de directos (→ @Ángel).
-4. Ejecutar y preguntar cualquier cosa sin vergüenza (responde el primer mentor disponible; @Alex solo si es algo que únicamente él sabe).
+4. Ejecutar y preguntar absolutamente cualquier cosa sin vergüenza (responde el primer mentor disponible; @Alex solo si es algo que únicamente él sabe).
 5. Rellenar el cuestionario de onboarding cuando se lo pase.
 
 Mentores:

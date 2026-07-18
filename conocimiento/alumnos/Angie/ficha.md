@@ -1,11 +1,10 @@
-# ANGIE — FICHA CLIENTA (Angie Paola Moreno Ladino)
+# ANGIE — FICHA CLIENTA (versión pública; la completa está en el BRAIN privado)
 > Última actualización: 18 julio 2026 (llamada de estrategia post-onboarding)
 > Canal Discord: 🔒┃angie · Clave roster: angie
 
 ## Datos y contexto
-- Entró el 16/07/2026. Pago único por transferencia (equivalente a 199€/mes × 12), sin financiación: reinvierte lo ganado en TikTok Shop.
-- Urgencia real: se le acabó el paro; vive de esto en parte.
-- ~7 meses en TikTok Shop. Venía del curso Kreator (1.500€) sin resultados y con malas prácticas heredadas (productos impuestos que no venden, "mandar códigos al proveedor", comentar a compañeros).
+- Entró el 16/07/2026 en la mentoría.
+- ~7 meses en TikTok Shop. Venía del curso Kreator sin resultados y con malas prácticas heredadas (productos impuestos que no venden, "mandar códigos al proveedor", comentar a compañeros).
 - Disponibilidad alta: ~8 h/día. Muy organizada, le gustan las tablas/planning.
 - Equipo: iPhone (último modelo), micrófonos Hollyland (usarlos solo si no dan fricción; en casa se graba igual sin micro), edita desde la propia app de TikTok. Sin espacio para setup de directos con ordenador; tiene una tablet vieja (Ángel confirmará si sirve para el directo).
 - Su chico la apoya (hicieron juntos un directo del ventilador; hubo comentarios ofensivos y lo cortaron — él ya no se anima, pero la apoya).
@@ -46,6 +45,6 @@ Ver conocimiento/plannings/Planning_Angie_TikTokShop_19JUL-28JUL2026.md
 - Pendiente de los mentores: pasarle el planning, referencias de vídeos de sujetadores (pedir también a Ana los que mejor le funcionaron), cuestionario de onboarding, que Ángel la contacte para directos (y confirme lo de la tablet), que Víctor la ayude con carruseles, clase nueva de directos cuando esté grabada.
 
 ## Llamadas registradas (Fathom)
-- 20/03/2026 — Primera llamada de venta (no cerró entonces): https://fathom.video/calls/607923058
+- 20/03/2026 — Primera llamada de venta: https://fathom.video/calls/607923058
 - 16/07/2026 — Sesión de diagnóstico y cierre (entra en la mentoría): https://fathom.video/calls/748751050
 - 18/07/2026 — Llamada de estrategia / análisis inicial de cuenta (origen del plan de 10 días): https://fathom.video/calls/752026037
