@@ -162,6 +162,13 @@ def gemini(prompt):
         with urllib.request.urlopen(req, timeout=40) as r:
             d = json.loads(r.read().decode())
             return d["candidates"][0]["content"]["parts"][0]["text"].strip()
+    except urllib.error.HTTPError as e:
+        try:
+            detail = e.read().decode()[:400]
+        except Exception:
+            detail = ""
+        print(f"GEMINI_FAIL: {e} {detail}")
+        return None
     except Exception as e:
         print(f"GEMINI_FAIL: {e}")
         return None
