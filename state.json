@@ -1,24 +1,24 @@
 {
- "cmd_cursor": "1528354907877539942",
+ "cmd_cursor": "1528386908697399306",
  "students": {
   "antonio": {
-   "last_human_ts": "2026-07-19T11:47:17.799000+00:00",
+   "last_human_ts": "2026-07-19T12:07:59.184000+00:00",
    "last_speaker": "mentor",
    "last_draft": "2026-07-17T03:30:00+00:00",
    "intro_sent": true,
    "unanswered": 0,
    "paused": false,
-   "cursor": "1528367626265559100",
+   "cursor": "1528372833011503184",
    "last_sent": "2026-07-17T12:19:56.763935+00:00",
    "alerted": false
   },
   "yolanda": {
-   "last_human_ts": "2026-07-18T07:54:08.572000+00:00",
-   "last_speaker": "mentor",
+   "last_human_ts": "2026-07-19T12:25:38.477000+00:00",
+   "last_speaker": "student",
    "intro_sent": false,
    "unanswered": 0,
    "paused": false,
-   "cursor": "1527946563328933948",
+   "cursor": "1528377276008239245",
    "alerted": false
   },
   "maritza": {
@@ -77,12 +77,12 @@
    "cursor": "1527343380231749773"
   },
   "celia": {
-   "last_human_ts": "2026-07-19T10:35:00.109000+00:00",
+   "last_human_ts": "2026-07-19T12:10:31.125000+00:00",
    "last_speaker": "mentor",
    "intro_sent": true,
    "unanswered": 0,
    "paused": false,
-   "cursor": "1528349432675041291",
+   "cursor": "1528373470298112242",
    "last_sent": "2026-07-18T01:48:14.773560+00:00",
    "alerted": false
   },
@@ -140,13 +140,14 @@
    "alerted": false
   },
   "mayiz": {
-   "last_human_ts": "2026-07-16T18:40:00+00:00",
+   "last_human_ts": "2026-07-19T12:38:41.210000+00:00",
    "last_speaker": "student",
    "intro_sent": false,
    "unanswered": 0,
    "paused": true,
    "pause_reason": "identidad por confirmar",
-   "cursor": "1527384378370556075"
+   "cursor": "1528380559028523150",
+   "alerted": false
   },
   "xenia": {
    "last_human_ts": "2026-07-18T11:24:16.485000+00:00",
