@@ -140,13 +140,13 @@
    "alerted": false
   },
   "mayiz": {
-   "last_human_ts": "2026-07-19T12:38:41.210000+00:00",
-   "last_speaker": "student",
+   "last_human_ts": "2026-07-19T13:36:51.687000+00:00",
+   "last_speaker": "mentor",
    "intro_sent": false,
    "unanswered": 0,
    "paused": true,
    "pause_reason": "identidad por confirmar",
-   "cursor": "1528380559028523150",
+   "cursor": "1528395199150166227",
    "alerted": false
   },
   "xenia": {
