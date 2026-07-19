@@ -1,14 +1,14 @@
 {
- "cmd_cursor": "1528353460876214344",
+ "cmd_cursor": "1528354907877539942",
  "students": {
   "antonio": {
-   "last_human_ts": "2026-07-19T10:45:37.245000+00:00",
-   "last_speaker": "student",
+   "last_human_ts": "2026-07-19T11:47:17.799000+00:00",
+   "last_speaker": "mentor",
    "last_draft": "2026-07-17T03:30:00+00:00",
    "intro_sent": true,
    "unanswered": 0,
    "paused": false,
-   "cursor": "1528352105016983672",
+   "cursor": "1528367626265559100",
    "last_sent": "2026-07-17T12:19:56.763935+00:00",
    "alerted": false
   },
@@ -187,12 +187,12 @@
    "paused": false
   },
   "ana": {
-   "last_human_ts": "2026-07-18T06:52:12.518000+00:00",
+   "last_human_ts": "2026-07-19T11:33:23.252000+00:00",
    "last_speaker": "mentor",
    "intro_sent": false,
    "unanswered": 0,
    "paused": false,
-   "cursor": "1527930977068781602",
+   "cursor": "1528364125921480724",
    "alerted": false
   },
   "david": {
