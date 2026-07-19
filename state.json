@@ -1,5 +1,5 @@
 {
- "cmd_cursor": "1528429260170072255",
+ "cmd_cursor": "1528444271651192932",
  "students": {
   "antonio": {
    "last_human_ts": "2026-07-19T12:07:59.184000+00:00",
@@ -13,12 +13,12 @@
    "alerted": false
   },
   "yolanda": {
-   "last_human_ts": "2026-07-19T12:25:38.477000+00:00",
+   "last_human_ts": "2026-07-19T16:14:35.167000+00:00",
    "last_speaker": "student",
    "intro_sent": false,
    "unanswered": 0,
    "paused": false,
-   "cursor": "1528377276008239245",
+   "cursor": "1528434891862183957",
    "alerted": false
   },
   "maritza": {
