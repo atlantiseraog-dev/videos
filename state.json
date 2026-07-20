@@ -17,9 +17,10 @@
    "last_speaker": "student",
    "intro_sent": false,
    "unanswered": 0,
-   "paused": false,
+   "paused": true,
    "cursor": "1528434891862183957",
-   "alerted": false
+   "alerted": false,
+   "pause_reason": "no por ahora (Alex)"
   },
   "maritza": {
    "last_human_ts": "2026-07-20T04:07:19.918023+00:00",
@@ -82,10 +83,11 @@
    "last_speaker": "student",
    "intro_sent": true,
    "unanswered": 0,
-   "paused": false,
+   "paused": true,
    "cursor": "1528428173325238343",
    "last_sent": "2026-07-18T01:48:14.773560+00:00",
-   "alerted": false
+   "alerted": false,
+   "pause_reason": "no por ahora (Alex)"
   },
   "laura": {
    "last_human_ts": "2026-07-20T04:07:21.784384+00:00",
@@ -110,8 +112,9 @@
    "last_speaker": "student",
    "intro_sent": false,
    "unanswered": 0,
-   "paused": false,
-   "cursor": "1527250327152099399"
+   "paused": true,
+   "cursor": "1527250327152099399",
+   "pause_reason": "no por ahora (Alex)"
   },
   "claudiu": {
    "last_human_ts": "2026-07-20T04:07:23.860221+00:00",
@@ -158,9 +161,10 @@
    "last_speaker": "student",
    "intro_sent": false,
    "unanswered": 0,
-   "paused": false,
+   "paused": true,
    "cursor": "1527999444749123605",
-   "alerted": false
+   "alerted": false,
+   "pause_reason": "no por ahora (Alex)"
   },
   "reyes": {
    "last_human_ts": "2026-07-14T12:00:00+00:00",
@@ -196,9 +200,10 @@
    "last_speaker": "mentor",
    "intro_sent": false,
    "unanswered": 0,
-   "paused": false,
+   "paused": true,
    "cursor": "1528364125921480724",
-   "alerted": false
+   "alerted": false,
+   "pause_reason": "no por ahora (Alex)"
   },
   "david": {
    "last_human_ts": "2026-07-02T12:00:00+00:00",
