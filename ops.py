@@ -12,7 +12,7 @@
 #   create_student_channel        args="clave:Nombre[:user_id];..." crea canal 1:1
 #   audit_members                 comprueba servidor + rol VIP por alumno
 #   assign_vip      args=a,b|""   da el rol VIP (vacío = a todos los que falte)
-#   toggle_pause    args=clave:on|off[:razón]
+#   toggle_pause    args=clave:on|off[:razón];clave2:...  (varios con ';')
 #   test_gemini                   llamada de prueba a la API de Gemini
 #   list_mentors                  lista quién tiene el rol @Mentor
 #   list_unknown                  miembros del servidor que NO están en el roster
@@ -201,19 +201,20 @@ def assign_vip(args):
 
 
 def toggle_pause(args):
-    """args = "clave:on[:razón]" o "clave:off"."""
-    parts = args.split(":")
-    key = parts[0].strip()
-    mode = (parts[1] if len(parts) > 1 else "off").strip()
+    """args = "clave:on[:razón]" o "clave:off". Varios separados por ';'."""
     state = jload("state.json")
-    s = state["students"].setdefault(key, {})
-    s["paused"] = (mode == "on")
-    if mode == "on":
-        s["pause_reason"] = parts[2].strip() if len(parts) > 2 else "manual"
-    else:
-        s.pop("pause_reason", None)
+    for spec in [x.strip() for x in args.split(";") if x.strip()]:
+        parts = spec.split(":")
+        key = parts[0].strip()
+        mode = (parts[1] if len(parts) > 1 else "off").strip()
+        s = state["students"].setdefault(key, {})
+        s["paused"] = (mode == "on")
+        if mode == "on":
+            s["pause_reason"] = parts[2].strip() if len(parts) > 2 else "manual"
+        else:
+            s.pop("pause_reason", None)
+        print(f"{key}: paused={s['paused']}")
     jsave("state.json", state)
-    print(f"{key}: paused={s['paused']}")
 
 
 def list_mentors(_args):
