@@ -7,6 +7,7 @@
 #   send_followups  args=a,b,c    genera y ENVÍA el follow-up a esos alumnos
 #   draft_followups args=a,b,c    igual pero publica el borrador en #mentores
 #   post_mentores   args=texto    publica un mensaje en #mentores
+#   post_general    args=texto    publica un mensaje en #chat-general
 #   find_member     args=q1,q2    busca miembros del servidor por nombre
 #   create_student_channel        args="clave:Nombre[:user_id];..." crea canal 1:1
 #   audit_members                 comprueba servidor + rol VIP por alumno
@@ -26,6 +27,7 @@ CUENTAS_CHANNEL_NAME = "cuentas-de-alumnos"
 CATEGORY_MENTORIA = "1527228588687101982"
 TEMPLATE_CHANNEL = "1527343966716952586"   # 🔒┃antonio, referencia de permisos
 ROLE_VIP = "1527228556260937849"           # rol Alumno VIP (acceso a canales generales)
+CH_GENERAL = "1527228575546347612"         # canal chat-general
 
 
 def find_channel(name_contains):
@@ -307,7 +309,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--action", required=True,
                     choices=["create_cuentas_channel", "send_followups",
-                             "draft_followups", "post_mentores",
+                             "draft_followups", "post_mentores", "post_general",
                              "find_member", "create_student_channel",
                              "audit_members", "assign_vip", "toggle_pause",
                              "test_gemini", "list_mentors", "list_unknown",
@@ -322,6 +324,8 @@ def main():
         _followups(a.args, live=False)
     elif a.action == "post_mentores":
         post(CH_MENTORES, a.args)
+    elif a.action == "post_general":
+        post(CH_GENERAL, a.args)
     elif a.action == "find_member":
         find_member(a.args)
     elif a.action == "create_student_channel":
