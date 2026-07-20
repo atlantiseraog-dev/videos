@@ -4,21 +4,18 @@
 #
 # Acciones:
 #   create_cuentas_channel        crea/actualiza el canal 📋┃cuentas-de-alumnos
-#                                 y fija el mensaje con las cuentas (cuentas.md)
 #   send_followups  args=a,b,c    genera y ENVÍA el follow-up a esos alumnos
-#                                 (claves del roster separadas por comas)
 #   draft_followups args=a,b,c    igual pero publica el borrador en #mentores
 #   post_mentores   args=texto    publica un mensaje en #mentores
 #   find_member     args=q1,q2    busca miembros del servidor por nombre
-#   create_student_channel        args="clave:Nombre[:user_id];clave2:..."
-#                                 crea el canal privado 🔒┃nombre (permisos
-#                                 copiados de un canal 1:1 existente) y
-#                                 actualiza roster.json y state.json
+#   create_student_channel        args="clave:Nombre[:user_id];..." crea canal 1:1
 #   audit_members                 comprueba servidor + rol VIP por alumno
 #   assign_vip      args=a,b|""   da el rol VIP (vacío = a todos los que falte)
 #   toggle_pause    args=clave:on|off[:razón]
 #   test_gemini                   llamada de prueba a la API de Gemini
 #   list_mentors                  lista quién tiene el rol @Mentor
+#   list_unknown                  miembros del servidor que NO están en el roster
+#   send_outbox                   envía cada mensaje de outbox.json a su alumno
 import argparse, time
 from urllib.parse import quote
 
@@ -51,7 +48,6 @@ def create_cuentas_channel(_args):
             "name": f"📋┃{CUENTAS_CHANNEL_NAME}",
             "type": 0,
             "permission_overwrites": [
-                # @everyone puede leer pero no escribir; mentores sí escriben
                 {"id": GUILD, "type": 0, "deny": "2048"},
                 {"id": ROLE_MENTOR, "type": 0, "allow": "2048"},
             ]})
@@ -81,6 +77,30 @@ def find_member(args):
             u = m.get("user", {})
             print(f"   id={u.get('id')} username={u.get('username')} "
                   f"global_name={u.get('global_name')} nick={m.get('nick')}")
+
+
+def list_unknown(_args):
+    """Miembros del servidor que NO son bots, NO son mentores y NO están en el
+    roster (por user_id). Sirve para detectar altas nuevas sin fichar."""
+    roster = jload("roster.json")
+    known = {e.get("user_id") for e in roster["students"].values() if e.get("user_id")}
+    st, members = disc("GET", f"/guilds/{GUILD}/members?limit=1000")
+    if st != 200:
+        print(f"FAIL listar miembros {st} {members}")
+        return
+    n = 0
+    for m in members:
+        u = m.get("user", {})
+        uid = u.get("id")
+        if not uid or u.get("bot"):
+            continue
+        if ROLE_MENTOR in m.get("roles", []) or uid in known:
+            continue
+        n += 1
+        vip = "VIP:si" if ROLE_VIP in m.get("roles", []) else "VIP:NO"
+        print(f"NUEVO/DESCONOCIDO: id={uid} username={u.get('username')} "
+              f"global_name={u.get('global_name')} nick={m.get('nick')} {vip}")
+    print(f"total desconocidos: {n}")
 
 
 def create_student_channel(args):
@@ -138,8 +158,6 @@ def create_student_channel(args):
 
 
 def audit_members(_args):
-    """Comprueba, por alumno del roster: que está en el servidor y que tiene
-    el rol Alumno VIP (sin él no ve anuncios/chat-general/etc.)."""
     roster = jload("roster.json")
     st, members = disc("GET", f"/guilds/{GUILD}/members?limit=1000")
     if st != 200:
@@ -162,8 +180,6 @@ def audit_members(_args):
 
 
 def assign_vip(args):
-    """Da el rol Alumno VIP a los alumnos indicados (o a TODOS los del roster
-    que estén en el servidor y no lo tengan, si args va vacío)."""
     roster = jload("roster.json")
     keys = [k.strip() for k in args.split(",") if k.strip()] or list(roster["students"].keys())
     st, members = disc("GET", f"/guilds/{GUILD}/members?limit=1000")
@@ -199,7 +215,6 @@ def toggle_pause(args):
 
 
 def list_mentors(_args):
-    """Lista quién tiene el rol @Mentor (deberían ser SOLO Alex, Víctor y Ángel)."""
     st, members = disc("GET", f"/guilds/{GUILD}/members?limit=1000")
     if st != 200:
         print(f"FAIL listar miembros {st} {members}")
@@ -220,6 +235,43 @@ def test_gemini(_args):
         print(f"GEMINI OK: {r[:200]}")
     else:
         print("GEMINI NO DISPONIBLE (el error GEMINI_FAIL sale justo encima)")
+
+
+def send_outbox(_args):
+    """Envía cada mensaje de outbox.json (dict clave->texto) al canal del alumno,
+    marca el estado como enviado y VACÍA el buzón para no reenviar."""
+    roster, state = jload("roster.json"), jload("state.json")
+    try:
+        outbox = jload("outbox.json")
+    except Exception:
+        outbox = {}
+    if not isinstance(outbox, dict) or not outbox:
+        print("outbox vacío, nada que enviar")
+        return
+    sent = []
+    for key, text in outbox.items():
+        e = roster["students"].get(key)
+        if not e or not e.get("channel_id"):
+            print(f"skip {key}: sin canal")
+            continue
+        if not text or not str(text).strip():
+            print(f"skip {key}: mensaje vacío")
+            continue
+        post(e["channel_id"], text)
+        s = state["students"].setdefault(key, {})
+        stamp = now().isoformat()
+        s["last_sent"] = stamp
+        s["intro_sent"] = True
+        s["last_speaker"] = "mentor"
+        s["last_human_ts"] = stamp
+        s["unanswered"] = 1
+        s["paused"] = False
+        print(f"ENVIADO a {e['nombre']} ({key})")
+        sent.append(key)
+        time.sleep(1)
+    jsave("state.json", state)
+    jsave("outbox.json", {})
+    print(f"outbox enviado: {len(sent)} -> {sent}")
 
 
 def _followups(args, live):
@@ -258,7 +310,8 @@ def main():
                              "draft_followups", "post_mentores",
                              "find_member", "create_student_channel",
                              "audit_members", "assign_vip", "toggle_pause",
-                             "test_gemini", "list_mentors"])
+                             "test_gemini", "list_mentors", "list_unknown",
+                             "send_outbox"])
     ap.add_argument("--args", default="")
     a = ap.parse_args()
     if a.action == "create_cuentas_channel":
@@ -283,6 +336,10 @@ def main():
         test_gemini(a.args)
     elif a.action == "list_mentors":
         list_mentors(a.args)
+    elif a.action == "list_unknown":
+        list_unknown(a.args)
+    elif a.action == "send_outbox":
+        send_outbox(a.args)
     print("done", a.action)
 
 
