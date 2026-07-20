@@ -127,12 +127,12 @@
    "last_sent": "2026-07-20T04:07:23.860221+00:00"
   },
   "angie": {
-   "last_human_ts": "2026-07-20T09:34:42.023000+00:00",
+   "last_human_ts": "2026-07-20T10:33:25.426000+00:00",
    "last_speaker": "mentor",
    "intro_sent": true,
    "unanswered": 0,
    "paused": false,
-   "cursor": "1528696645187797052",
+   "cursor": "1528711423411228775",
    "alerted": false,
    "last_sent": "2026-07-20T04:07:25.685387+00:00"
   },
@@ -213,12 +213,12 @@
    "paused": false
   },
   "marta_f": {
-   "last_human_ts": "2026-07-20T07:29:08.943000+00:00",
+   "last_human_ts": "2026-07-20T10:33:56.011000+00:00",
    "last_speaker": "mentor",
    "intro_sent": true,
    "unanswered": 0,
    "paused": false,
-   "cursor": "1528665049160224908",
+   "cursor": "1528711551694012607",
    "last_sent": "2026-07-20T04:07:27.570720+00:00",
    "alerted": false
   },
