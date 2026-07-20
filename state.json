@@ -213,13 +213,14 @@
    "paused": false
   },
   "marta_f": {
-   "last_human_ts": "2026-07-20T04:07:27.570720+00:00",
+   "last_human_ts": "2026-07-20T07:29:08.943000+00:00",
    "last_speaker": "mentor",
    "intro_sent": true,
-   "unanswered": 1,
+   "unanswered": 0,
    "paused": false,
-   "cursor": "1528614289001287794",
-   "last_sent": "2026-07-20T04:07:27.570720+00:00"
+   "cursor": "1528665049160224908",
+   "last_sent": "2026-07-20T04:07:27.570720+00:00",
+   "alerted": false
   },
   "angel_t": {
    "last_human_ts": "2026-07-14T12:00:00+00:00",
