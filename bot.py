@@ -17,9 +17,8 @@ TOKEN = os.environ["DISCORD_TOKEN"]
 GKEY = os.environ.get("GEMINI_API_KEY", "")
 MODE = os.environ.get("MODE", "draft")            # draft | live
 GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
-DAILY_CAP = 3
-INT_STUDENT = 15   # días si el último en hablar fue el alumno
-INT_US = 7         # días si el último fuimos nosotros
+DAILY_CAP = 9
+INT_DAYS = 5       # días entre toques, contados desde NUESTRO último toque (last_sent)
 
 # ---------- utilidades ----------
 
@@ -309,11 +308,12 @@ def handle_commands(roster, state):
             post(CH_MENTORES, estado_report(roster, state))
 
 def next_due(s):
-    base = ts(s.get("last_human_ts", "2026-06-26T00:00:00+00:00"))
-    interval = INT_STUDENT if s.get("last_speaker") == "student" else INT_US
+    # Rotacion cada INT_DAYS contados desde NUESTRO ultimo toque (last_sent/last_draft),
+    # ignorando las respuestas del alumno. Si nunca se le ha tocado, base = ultima
+    # interaccion humana (asi los no-rotados salen enseguida).
     last_action = s.get("last_draft") if MODE == "draft" else s.get("last_sent")
-    eff = max(base, ts(last_action)) if last_action else base
-    return eff + timedelta(days=interval)
+    base = ts(last_action) if last_action else ts(s.get("last_human_ts", "2026-06-26T00:00:00+00:00"))
+    return base + timedelta(days=INT_DAYS)
 
 def estado_report(roster, state):
     _, member_ids = guild_people()
