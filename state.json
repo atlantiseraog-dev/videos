@@ -1,5 +1,5 @@
 {
- "cmd_cursor": "1528754641054203916",
+ "cmd_cursor": "1528836454086742106",
  "students": {
   "antonio": {
    "last_human_ts": "2026-07-19T12:07:59.184000+00:00",
@@ -51,14 +51,15 @@
    "alerted": false
   },
   "adri": {
-   "last_human_ts": "2026-07-17T12:20:01.179728+00:00",
+   "last_human_ts": "2026-07-20T17:28:43.304000+00:00",
    "last_speaker": "mentor",
    "last_draft": "2026-07-17T03:30:00+00:00",
    "intro_sent": true,
-   "unanswered": 1,
+   "unanswered": 0,
    "paused": false,
-   "cursor": "1527651086188679330",
-   "last_sent": "2026-07-17T12:20:01.179728+00:00"
+   "cursor": "1528815936566726956",
+   "last_sent": "2026-07-17T12:20:01.179728+00:00",
+   "alerted": false
   },
   "urko": {
    "last_human_ts": "2026-07-16T17:23:00+00:00",
@@ -196,12 +197,12 @@
    "paused": false
   },
   "ana": {
-   "last_human_ts": "2026-07-19T11:33:23.252000+00:00",
-   "last_speaker": "mentor",
+   "last_human_ts": "2026-07-20T18:24:43.071000+00:00",
+   "last_speaker": "student",
    "intro_sent": false,
    "unanswered": 0,
    "paused": true,
-   "cursor": "1528364125921480724",
+   "cursor": "1528830028450893975",
    "alerted": false,
    "pause_reason": "no por ahora (Alex)"
   },
