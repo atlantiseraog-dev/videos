@@ -1,5 +1,5 @@
 {
- "cmd_cursor": "1528879164751483053",
+ "cmd_cursor": "1528896970406629406",
  "students": {
   "antonio": {
    "last_human_ts": "2026-07-19T12:07:59.184000+00:00",
@@ -241,13 +241,13 @@
    "pause_reason": "toque personal de Alex primero"
   },
   "melissa": {
-   "last_human_ts": "2026-07-20T21:12:41.682000+00:00",
-   "last_speaker": "student",
+   "last_human_ts": "2026-07-20T22:05:06.699000+00:00",
+   "last_speaker": "mentor",
    "intro_sent": false,
    "unanswered": 0,
    "paused": true,
    "pause_reason": "alta nueva, ficha pendiente",
-   "cursor": "1528872301209325669",
+   "cursor": "1528885492366446854",
    "alerted": false
   }
  }
