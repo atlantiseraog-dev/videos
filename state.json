@@ -51,13 +51,13 @@
    "alerted": false
   },
   "adri": {
-   "last_human_ts": "2026-07-20T21:10:44.372000+00:00",
+   "last_human_ts": "2026-07-21T11:49:57.493000+00:00",
    "last_speaker": "mentor",
    "last_draft": "2026-07-17T03:30:00+00:00",
    "intro_sent": true,
    "unanswered": 0,
    "paused": false,
-   "cursor": "1528871809175261285",
+   "cursor": "1529093071801946144",
    "last_sent": "2026-07-17T12:20:01.179728+00:00",
    "alerted": false
   },
