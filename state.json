@@ -51,13 +51,13 @@
    "alerted": false
   },
   "adri": {
-   "last_human_ts": "2026-07-21T11:49:57.493000+00:00",
+   "last_human_ts": "2026-07-21T12:52:57.755000+00:00",
    "last_speaker": "mentor",
    "last_draft": "2026-07-17T03:30:00+00:00",
    "intro_sent": true,
    "unanswered": 0,
    "paused": false,
-   "cursor": "1529093071801946144",
+   "cursor": "1529108927369838712",
    "last_sent": "2026-07-17T12:20:01.179728+00:00",
    "alerted": false
   },
@@ -128,12 +128,12 @@
    "last_sent": "2026-07-20T04:07:23.860221+00:00"
   },
   "angie": {
-   "last_human_ts": "2026-07-20T10:33:25.426000+00:00",
+   "last_human_ts": "2026-07-21T12:24:53.635000+00:00",
    "last_speaker": "mentor",
    "intro_sent": true,
    "unanswered": 0,
    "paused": false,
-   "cursor": "1528711423411228775",
+   "cursor": "1529101863658459300",
    "alerted": false,
    "last_sent": "2026-07-20T04:07:25.685387+00:00"
   },
