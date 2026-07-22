@@ -158,12 +158,12 @@
    "alerted": false
   },
   "xenia": {
-   "last_human_ts": "2026-07-18T11:24:16.485000+00:00",
-   "last_speaker": "student",
+   "last_human_ts": "2026-07-22T17:30:08.018000+00:00",
+   "last_speaker": "mentor",
    "intro_sent": false,
    "unanswered": 0,
    "paused": true,
-   "cursor": "1527999444749123605",
+   "cursor": "1529541067614060655",
    "alerted": false,
    "pause_reason": "no por ahora (Alex)"
   },
@@ -241,13 +241,13 @@
    "pause_reason": "toque personal de Alex primero"
   },
   "melissa": {
-   "last_human_ts": "2026-07-22T16:08:19.081000+00:00",
+   "last_human_ts": "2026-07-22T17:29:53.062000+00:00",
    "last_speaker": "mentor",
    "intro_sent": false,
    "unanswered": 0,
    "paused": true,
    "pause_reason": "alta nueva, ficha pendiente",
-   "cursor": "1529520478039965696",
+   "cursor": "1529541004884181114",
    "alerted": false
   }
  }
