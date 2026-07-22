@@ -128,12 +128,12 @@
    "last_sent": "2026-07-20T04:07:23.860221+00:00"
   },
   "angie": {
-   "last_human_ts": "2026-07-22T11:17:38.330000+00:00",
+   "last_human_ts": "2026-07-22T12:30:51.250000+00:00",
    "last_speaker": "mentor",
    "intro_sent": true,
    "unanswered": 0,
    "paused": false,
-   "cursor": "1529447326228156428",
+   "cursor": "1529465751470346271",
    "alerted": false,
    "last_sent": "2026-07-20T04:07:25.685387+00:00"
   },
