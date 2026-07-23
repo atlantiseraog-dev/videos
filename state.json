@@ -1,5 +1,5 @@
 {
- "cmd_cursor": "1529583390662332556",
+ "cmd_cursor": "1529741413380788364",
  "students": {
   "antonio": {
    "last_human_ts": "2026-07-19T12:07:59.184000+00:00",
@@ -138,13 +138,13 @@
    "last_sent": "2026-07-20T04:07:25.685387+00:00"
   },
   "kalmetatok": {
-   "last_human_ts": "2026-07-22T22:32:04.195000+00:00",
+   "last_human_ts": "2026-07-23T07:21:22.496000+00:00",
    "last_speaker": "mentor",
    "intro_sent": false,
    "unanswered": 0,
    "paused": true,
    "pause_reason": "identidad por confirmar",
-   "cursor": "1529617052367851660",
+   "cursor": "1529750256336506980",
    "alerted": false
   },
   "mayiz": {
@@ -158,12 +158,12 @@
    "alerted": false
   },
   "xenia": {
-   "last_human_ts": "2026-07-22T17:30:08.018000+00:00",
+   "last_human_ts": "2026-07-23T05:17:41.375000+00:00",
    "last_speaker": "mentor",
    "intro_sent": false,
    "unanswered": 0,
    "paused": true,
-   "cursor": "1529541067614060655",
+   "cursor": "1529719129899143260",
    "alerted": false,
    "pause_reason": "no por ahora (Alex)"
   },
@@ -241,13 +241,13 @@
    "pause_reason": "toque personal de Alex primero"
   },
   "melissa": {
-   "last_human_ts": "2026-07-22T17:29:53.062000+00:00",
+   "last_human_ts": "2026-07-23T05:18:31.324000+00:00",
    "last_speaker": "mentor",
    "intro_sent": false,
    "unanswered": 0,
    "paused": true,
    "pause_reason": "alta nueva, ficha pendiente",
-   "cursor": "1529541004884181114",
+   "cursor": "1529719339400429779",
    "alerted": false
   }
  }
