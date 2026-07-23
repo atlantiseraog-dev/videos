@@ -249,6 +249,13 @@
    "pause_reason": "alta nueva, ficha pendiente",
    "cursor": "1529770526480928801",
    "alerted": false
+  },
+  "feewy": {
+   "last_human_ts": "2026-07-23T14:31:17.718289+00:00",
+   "last_speaker": "mentor",
+   "intro_sent": false,
+   "unanswered": 0,
+   "paused": false
   }
  }
 }
