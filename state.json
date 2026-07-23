@@ -1,5 +1,5 @@
 {
- "cmd_cursor": "1529940752657027072",
+ "cmd_cursor": "1529964872979451995",
  "students": {
   "antonio": {
    "last_human_ts": "2026-07-23T17:19:34.132000+00:00",
@@ -13,22 +13,22 @@
    "alerted": false
   },
   "yolanda": {
-   "last_human_ts": "2026-07-23T17:38:20.672000+00:00",
-   "last_speaker": "mentor",
+   "last_human_ts": "2026-07-23T21:24:46.109000+00:00",
+   "last_speaker": "student",
    "intro_sent": false,
    "unanswered": 0,
    "paused": true,
-   "cursor": "1529905521820176635",
+   "cursor": "1529962503273189437",
    "alerted": false,
    "pause_reason": "no por ahora (Alex)"
   },
   "maritza": {
-   "last_human_ts": "2026-07-23T19:27:25.871000+00:00",
+   "last_human_ts": "2026-07-23T20:52:55.842000+00:00",
    "last_speaker": "mentor",
    "intro_sent": true,
    "unanswered": 0,
    "paused": false,
-   "cursor": "1529932974374780988",
+   "cursor": "1529954491032539269",
    "last_sent": "2026-07-20T04:07:19.918023+00:00",
    "alerted": false
   },
@@ -129,12 +129,12 @@
    "last_sent": "2026-07-20T04:07:23.860221+00:00"
   },
   "angie": {
-   "last_human_ts": "2026-07-23T20:00:49.589000+00:00",
+   "last_human_ts": "2026-07-23T20:53:49.168000+00:00",
    "last_speaker": "mentor",
    "intro_sent": true,
    "unanswered": 0,
    "paused": false,
-   "cursor": "1529941378576945152",
+   "cursor": "1529954714698121371",
    "alerted": false,
    "last_sent": "2026-07-20T04:07:25.685387+00:00"
   },
