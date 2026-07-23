@@ -251,11 +251,12 @@
    "alerted": false
   },
   "feewy": {
-   "last_human_ts": "2026-07-23T14:31:17.718289+00:00",
+   "last_human_ts": "2026-07-23T14:36:43.648569+00:00",
    "last_speaker": "mentor",
-   "intro_sent": false,
-   "unanswered": 0,
-   "paused": false
+   "intro_sent": true,
+   "unanswered": 1,
+   "paused": false,
+   "last_sent": "2026-07-23T14:36:43.648569+00:00"
   }
  }
 }
