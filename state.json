@@ -255,8 +255,9 @@
    "last_speaker": "mentor",
    "intro_sent": true,
    "unanswered": 1,
-   "paused": false,
-   "last_sent": "2026-07-23T14:36:43.648569+00:00"
+   "paused": true,
+   "last_sent": "2026-07-23T14:36:43.648569+00:00",
+   "pause_reason": "ficha pendiente (alta nueva)"
   }
  }
 }
