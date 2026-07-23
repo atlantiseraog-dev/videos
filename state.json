@@ -1,5 +1,5 @@
 {
- "cmd_cursor": "1529819241904082984",
+ "cmd_cursor": "1529846893268570213",
  "students": {
   "antonio": {
    "last_human_ts": "2026-07-19T12:07:59.184000+00:00",
@@ -13,12 +13,12 @@
    "alerted": false
   },
   "yolanda": {
-   "last_human_ts": "2026-07-22T21:29:31.281000+00:00",
+   "last_human_ts": "2026-07-23T13:42:14.619000+00:00",
    "last_speaker": "mentor",
    "intro_sent": false,
    "unanswered": 0,
    "paused": true,
-   "cursor": "1529601311505514496",
+   "cursor": "1529846105087414272",
    "alerted": false,
    "pause_reason": "no por ahora (Alex)"
   },
@@ -138,13 +138,13 @@
    "last_sent": "2026-07-20T04:07:25.685387+00:00"
   },
   "kalmetatok": {
-   "last_human_ts": "2026-07-23T07:21:22.496000+00:00",
-   "last_speaker": "mentor",
+   "last_human_ts": "2026-07-23T13:23:41.690000+00:00",
+   "last_speaker": "student",
    "intro_sent": false,
    "unanswered": 0,
    "paused": true,
    "pause_reason": "identidad por confirmar",
-   "cursor": "1529750256336506980",
+   "cursor": "1529841437125120151",
    "alerted": false
   },
   "mayiz": {
@@ -158,12 +158,12 @@
    "alerted": false
   },
   "xenia": {
-   "last_human_ts": "2026-07-23T10:22:14.081000+00:00",
-   "last_speaker": "student",
+   "last_human_ts": "2026-07-23T12:27:56.126000+00:00",
+   "last_speaker": "mentor",
    "intro_sent": false,
    "unanswered": 0,
    "paused": true,
-   "cursor": "1529795771183136809",
+   "cursor": "1529827404812386365",
    "alerted": false,
    "pause_reason": "no por ahora (Alex)"
   },
