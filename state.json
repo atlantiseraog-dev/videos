@@ -23,12 +23,12 @@
    "pause_reason": "no por ahora (Alex)"
   },
   "maritza": {
-   "last_human_ts": "2026-07-24T12:53:34.206000+00:00",
+   "last_human_ts": "2026-07-24T15:34:34.651000+00:00",
    "last_speaker": "mentor",
    "intro_sent": true,
    "unanswered": 0,
    "paused": false,
-   "cursor": "1530196243853217813",
+   "cursor": "1530236762696187924",
    "last_sent": "2026-07-20T04:07:19.918023+00:00",
    "alerted": false
   },
