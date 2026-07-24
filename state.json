@@ -1,5 +1,5 @@
 {
- "cmd_cursor": "1530264404287946804",
+ "cmd_cursor": "1530287354193903758",
  "students": {
   "antonio": {
    "last_human_ts": "2026-07-23T17:19:34.132000+00:00",
@@ -149,13 +149,13 @@
    "alerted": false
   },
   "mayiz": {
-   "last_human_ts": "2026-07-22T03:28:00.634000+00:00",
-   "last_speaker": "mentor",
+   "last_human_ts": "2026-07-24T18:15:11.811000+00:00",
+   "last_speaker": "student",
    "intro_sent": false,
    "unanswered": 0,
    "paused": true,
    "pause_reason": "identidad por confirmar",
-   "cursor": "1529329140405239911",
+   "cursor": "1530277183874928790",
    "alerted": false
   },
   "xenia": {
