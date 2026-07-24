@@ -1,5 +1,5 @@
 {
- "cmd_cursor": "1530153935581614122",
+ "cmd_cursor": "1530186779217629325",
  "students": {
   "antonio": {
    "last_human_ts": "2026-07-23T17:19:34.132000+00:00",
@@ -139,13 +139,13 @@
    "last_sent": "2026-07-20T04:07:25.685387+00:00"
   },
   "kalmetatok": {
-   "last_human_ts": "2026-07-23T13:23:41.690000+00:00",
+   "last_human_ts": "2026-07-24T11:49:13.228000+00:00",
    "last_speaker": "student",
    "intro_sent": false,
    "unanswered": 0,
    "paused": true,
    "pause_reason": "identidad por confirmar",
-   "cursor": "1529841437125120151",
+   "cursor": "1530180049737613362",
    "alerted": false
   },
   "mayiz": {
